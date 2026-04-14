@@ -15,7 +15,7 @@ Desktop.ini
 *.log
 
 # Build files
-.build/*
+build/
 
 # VS Code: ignore local-only files, keep shared project configs
 .vscode/*

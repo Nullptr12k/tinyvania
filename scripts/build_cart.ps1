@@ -37,12 +37,3 @@ $out += ""
 New-Item -ItemType Directory -Force -Path "build" | Out-Null
 Set-Content -Path "build/tinyvania.p8" -Value ($out -join "`n") -Encoding ascii
 
-# Keep root source cart as include-based edit entrypoint
-$srcCart = @(
-  "pico-8 cartridge // http://www.pico-8.com",
-  "version 41",
-  "__lua__",
-  "#include src/main.lua"
-)
-Set-Content -Path "tinyvania.p8" -Value (($srcCart -join "`n") + "`n") -Encoding ascii
-
