@@ -14,6 +14,9 @@ Desktop.ini
 # Logs
 *.log
 
+# Build files
+.build/*
+
 # VS Code: ignore local-only files, keep shared project configs
 .vscode/*
 !.vscode/settings.json
