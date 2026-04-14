@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Tinyvania",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-NonInteractive",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\scripts\\build_cart.ps1",
+        "-Root",
+        "${workspaceFolder}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build and Run Tinyvania",
+      "type": "shell",
+      "dependsOn": "Build Tinyvania",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-NonInteractive",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "& '${config:pico8.pico8Path}' -run '${workspaceFolder}\\build\\tinyvania.p8'; exit $LASTEXITCODE"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Tinyvania: Build Only",
+      "type": "pwa-node",
+      "request": "launch",
+      "noDebug": true,
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-NonInteractive",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\scripts\\build_cart.ps1",
+        "-Root",
+        "${workspaceFolder}"
+      ],
+      "console": "internalConsole"
+    },
+    {
+      "name": "Tinyvania: Build + Run",
+      "type": "pwa-node",
+      "request": "launch",
+      "noDebug": true,
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build Tinyvania",
+      "runtimeExecutable": "${config:pico8.pico8Path}",
+      "runtimeArgs": [
+        "-run",
+        "${workspaceFolder}\\build\\tinyvania.p8"
+      ],
+      "console": "internalConsole"
+    }
+  ]
+}
