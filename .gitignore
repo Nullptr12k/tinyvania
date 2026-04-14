@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor temp / backup files
+*~
+*.swp
+*.swo
+*.tmp
+*.orig
+*.bak
+
+# Logs
+*.log
+
+# VS Code: ignore local-only files, keep shared project configs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# PICO-8 export artifacts (outside source cart workflow)
+*.html
+*.js
+*.wasm
+*.zip
