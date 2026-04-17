@@ -1,5 +1,6 @@
 #include render/palettes.lua
 #include shared/util.lua
+#include debug/debug.lua
 #include ecs/entities.lua
 #include entities/items.lua
 #include entities/interactables.lua
@@ -12,6 +13,5 @@
 #include render/map.lua
 #include ui/ui.lua
 #include core/boot.lua
-
 
 

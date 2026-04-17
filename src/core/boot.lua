@@ -1,15 +1,8 @@
-debug_mode = false
-
 function _init()
-	if debug_mode then
-		-- enable cursor
-		poke(0x5f2d, 0x1)
-	end
-	
 	-- global timer
 	t = 0
 	
-	debug = ""
+	debug_init()
 	
 	-- init other modules
 	init_palettes()
@@ -19,9 +12,7 @@ function _init()
 end
 
 function _update()
-	mx = stat(32)
-	my = stat(33)
-	mb = stat(34)
+	debug_update()
 	
 	--[[
 	if mb ~= 0 then
@@ -51,10 +42,7 @@ function _draw()
 	-- front entities
 	draw_entities_front()
 	
-	if debug_mode then
-		-- debug
-		draw_hitboxes()
-	end
+	debug_draw_world()
 	
 	camera()
 	
@@ -67,18 +55,7 @@ function _draw()
 		pal(palettes.eggplant, 1)
 	end
 	
-	if debug_mode then
-		-- draw cursor
-		spr(48, mx, my)
-		
-		--[[print_shadow(
-			debug,
-			64-2*#debug + room_x()*128,
-			4 + room_y()*128,
-			7, 5
-		)]]
-		print(debug, 8, 64, 7)
-	end
+	debug_draw_overlay()
 	
 	-- global timer
 	t += 1

@@ -29,30 +29,5 @@ function draw_map()
 	pal(0)
 end
 
-function draw_hitboxes()
-	for entity in all(entities.all) do
-		rect(
-			entity.x, entity.y,
-			entity.x + entity.w-1,
-			entity.y + entity.h-1, 11
-		)
-		
-		pset(
-			entity.x + entity.w\2,
-			entity.y + entity.h\2,
-			8
-		)
-		
-		if entity.hp then
-			print(
-				entity.hp .. " " .. entity.iframes,
-				entity.x,
-				entity.y-5,
-				7
-			)
-		end
-	end
-end
-
 
 

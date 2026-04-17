@@ -8,6 +8,7 @@ Set-Location $Root
 $luaOrder = @(
   "src/render/palettes.lua",
   "src/shared/util.lua",
+  "src/debug/debug.lua",
   "src/ecs/entities.lua",
   "src/entities/items.lua",
   "src/entities/interactables.lua",

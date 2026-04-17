@@ -53,14 +53,8 @@ function init_player()
 	player.slash_dir = false
 	
 	function player:update()
-		if debug_mode then
-			if mb & 1 ~= 0 then
-				self.x = mx-3 + room_x()*128
-				self.y = my-4 + room_y()*128
-				self.dx = 0
-				self.dy = 0
-				return
-			end
+		if debug_try_player_teleport(self) then
+			return
 		end
 		
 		if self.state == pconst.normal then
@@ -96,11 +90,6 @@ function init_player()
 		end
 		
 		self.hflip = not self.facing
-		
-		if debug_mode then
-			--local height = y - self.y
-			--debug = tostr(max(tonum(debug), height))
-		end
 	end
 	
 	function player:normal_control()
@@ -361,6 +350,5 @@ function init_player()
 		end
 	end
 end
-
 
 
