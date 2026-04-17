@@ -21,7 +21,7 @@ function debug_update()
 	mb = stat(34)
 end
 
-function debug_try_player_teleport(player_entity)
+function debug_handle_player_teleport()
 	if not debug_mode then
 		return false
 	end
@@ -30,10 +30,10 @@ function debug_try_player_teleport(player_entity)
 		return false
 	end
 	
-	player_entity.x = mx-3 + room_x()*128
-	player_entity.y = my-4 + room_y()*128
-	player_entity.dx = 0
-	player_entity.dy = 0
+	player.x = mx-3 + room_x()*128
+	player.y = my-4 + room_y()*128
+	player.dx = 0
+	player.dy = 0
 	return true
 end
 

@@ -19,6 +19,10 @@ function _update()
 		dissolve_all()
 	end]]
 	
+	if debug_handle_player_teleport() then
+		return
+	end
+	
 	-- entities
 	update_entities()
 	
