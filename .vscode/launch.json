@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Tinyvania: Build Only",
+      "name": "Build Only",
       "type": "pwa-node",
       "request": "launch",
       "noDebug": true,
@@ -21,7 +21,7 @@
       "console": "internalConsole"
     },
     {
-      "name": "Tinyvania: Build + Run",
+      "name": "Build + Run",
       "type": "pwa-node",
       "request": "launch",
       "noDebug": true,
